@@ -1,7 +1,10 @@
 from fastapi import FastAPI
+from mangum import Mangum
 from starlette.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+handler = Mangum(app)
 
 origins = ["*"]
 
